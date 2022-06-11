@@ -1,0 +1,57 @@
+@import "./style/reset.scss";
+
+@font-face {
+	font-family: "Underground Light";
+	src: url("../assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Underground Book";
+	src: url("../assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Underground Demi";
+	src: url("../assets/Fonts/P22UndergroundPro-Demi.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Underground Medium";
+	src: url("../assets/Fonts/P22UndergroundPro-Medium.otf") format("opentype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Underground Heavy";
+	src: url("../assets/Fonts/P22UndergroundPro-Heavy.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+:root {
+	--primary: #67ae8b;
+	--secondary: #498075;
+	--dark-green: #06373a;
+	--light-yellow: #ffe3b3;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	/* 1rem = 10px */
+	font-size: 62.5%; // this is for REM easy-conversion
+}
+
+body {
+	font-family: "Underground Book";
+	font-size: 1.6rem;
+}
