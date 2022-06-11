@@ -1,43 +1,31 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
+import { Search } from './components/Search/Search'
+import { dummyData } from './dummyData'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState(dummyData)
+
+ // useEffect(() => {
+    //const loadData = () => {
+        // try {
+        //     const response = await fetch("url", {
+        //         headers: { "Content-Type": "application/json" },
+        //         method: "GET"
+        //     });
+        //     console.log(response.data)
+        //     setData(response.data)
+        // } catch (err) {
+        //     console.error(err);
+    //}
+    //loadData();
+ // }, []) //TODO: Not yet implemented.
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
       </header>
+      <Search data = {data} />
     </div>
   )
 }
