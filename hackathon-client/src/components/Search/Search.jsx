@@ -14,7 +14,8 @@ export const Search = ({ data }) => {
 
 	const findMatches = (typedWord) => {
 		const regex = new RegExp(typedWord, "gi");
-		let matchArray = data.filter((item) => item.itemName.match(regex)).slice(0, 10);
+		// console.log(data.filter((item) => item.itemName.match(regex)))
+		let matchArray = data.filter((item) => item.itemName.match(regex));
 		setMatchValue(matchArray);
 	};
 

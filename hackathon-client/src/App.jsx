@@ -4,10 +4,10 @@ import { Search } from './components/Search/Search'
 import { dummyData } from './dummyData'
 
 function App() {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(dummyData)
 
-  useEffect(() => {
-    const loadData = () => {
+ // useEffect(() => {
+    //const loadData = () => {
         // try {
         //     const response = await fetch("url", {
         //         headers: { "Content-Type": "application/json" },
@@ -17,17 +17,15 @@ function App() {
         //     setData(response.data)
         // } catch (err) {
         //     console.error(err);
-        setData(dummyData); //TODO: remove it once connect to server;
-    }
-    loadData();
-    console.log(data);
-  }, []) //TODO: Not yet implemented.
+    //}
+    //loadData();
+ // }, []) //TODO: Not yet implemented.
 
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      <Search searchData = {data} />
+      <Search data = {data} />
     </div>
   )
 }
