@@ -26,7 +26,7 @@ export const dummyData = [
 	{
 		itemId: "ddd",
 		itemName: "Wine Bottle",
-		itemImage: string,
+		itemImage: "https://londonrecycles.co.uk/wp-content/uploads/2020/08/Wine-bottle.jpg",
 		isRecyclable: true,
 		howToRecycle:
 			"1. Empty bottle of residual contents.\n2. Keep the label and cap on.\n3. Put it into a recycling bin",
