@@ -1,29 +1,29 @@
 @font-face {
 	font-family: "Underground";
-	src: local("Underground Book"), url("./assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
+	src: local("Underground Book"), url("/assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
 	font-weight: 200;
 }
 
 @font-face {
 	font-family: "Underground Book";
-	src: url("./assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
+	src: url("/assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
 	font-weight: 300;
 }
 
 @font-face {
 	font-family: "Underground Demi";
-	src: local("Underground Demi"), url("./assets/Fonts/P22UndergroundPro-Demi.otf") format("opentype");
+	src: local("Underground Demi"), url("/assets/Fonts/P22UndergroundPro-Demi.otf") format("opentype");
 	font-weight: 400;
 }
 
 @font-face {
 	font-family: "Underground Medium";
-	src: local("Underground Medium"), url("./assets/Fonts/P22UndergroundPro-Medium.otf") format("opentype");
+	src: local("Underground Medium"), url("/assets/Fonts/P22UndergroundPro-Medium.otf") format("opentype");
 	font-weight: 500;
 }
 
 @font-face {
 	font-family: "Underground Heavy";
-	src: local("Underground Heavy"), url("./assets/Fonts/P22UndergroundPro-Heavy.otf") format("opentype");
+	src: local("Underground Heavy"), url("/assets/Fonts/P22UndergroundPro-Heavy.otf") format("opentype");
 	font-weight: 700;
 }
