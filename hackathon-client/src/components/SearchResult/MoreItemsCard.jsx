@@ -7,7 +7,7 @@ export const MoreItemsCard = (props) => {
 
   return (
     <>
-      <RoundBoxWrapper title="More items">
+      <RoundBoxWrapper title="Recent Item">
         <ul className={styles.itemCardWrapper}>
           {itemList.map(item => <li key={item.itemId}><img src='' alt={'item'} /></li>)}
         </ul>

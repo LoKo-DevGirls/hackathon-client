@@ -12,10 +12,10 @@ const apiUrl = "https://on-the-ground-api.herokuapp.com"
 export const SearchResult = () => {
   const { itemName, councilId } = useParams()
   const [searchResult, setSearchResult] = useState(null)
+  const [recentItem, setRecentItem] = useState(null)
 
   const councilName = 'Southwark'
   const categoryName = 'Plastic'
-  const moreItemList = [{itemId:1}, {itemId:2}, {itemId:3}, {itemId:4}]
 
   useEffect(() => {
 
@@ -31,36 +31,49 @@ export const SearchResult = () => {
             "Content-type": "application/json; charset=UTF-8"
           }
         })
-
         const result = data[0]
         setSearchResult(result)
+      } catch (err) {
+        console.error(err)
+      }
+    }
 
+    const getRecentItem = async () => {
+      try {
+        const { data } = await axios.get(`${apiUrl}/recentItem`, {
+          method: 'GET',
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          }
+        })
+        setRecentItem(data)
       } catch (err) {
         console.error(err)
       }
     }
 
     getSearchedItem()
+    getRecentItem()
 
     return () => {
     }
   }, [])
   
-  if (!searchResult) return null;
+  if (!searchResult || !recentItem) return null;
 
   return (
     <div className={styles.searchResultPage}>
       <ItemSummaryInfo
         itemName={searchResult.itemName}
         isRecyclable={searchResult.isRecyclable}
-        councilName={searchResult.councilName}
-        categoryName={searchResult.categoryName}
+        councilName={councilName}
+        categoryName={categoryName}
         imagePath={searchResult.itemImage}
       />
       <div className={styles.cardsWrapper}>
         {searchResult.howToRecycle &&<HowToRecycle howToRecycleInfo={searchResult.howToRecycle} />}
         {searchResult.upcycleVideo && <UpcycleVideoCard videoLink={searchResult.upcycleVideo} />}
-        <MoreItemsCard itemList={moreItemList} />
+        <MoreItemsCard itemList={[recentItem]} />
       </div>
     </div>
   )
