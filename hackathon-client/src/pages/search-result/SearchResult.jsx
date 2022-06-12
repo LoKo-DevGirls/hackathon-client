@@ -8,14 +8,16 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const apiUrl = "https://on-the-ground-api.herokuapp.com"
+const mockData = {
+  councilName: 'Southwark',
+  categoryName: 'Glass',
+  imagePath: 'https://res.cloudinary.com/dx39zdrw9/image/upload/v1654974652/hackathon/items/water_bottle_wo5pl7.jpg'
+}
 
 export const SearchResult = () => {
   const { itemName, councilId } = useParams()
   const [searchResult, setSearchResult] = useState(null)
   const [recentItem, setRecentItem] = useState(null)
-
-  const councilName = 'Southwark'
-  const categoryName = 'Plastic'
 
   useEffect(() => {
 
@@ -58,6 +60,7 @@ export const SearchResult = () => {
     return () => {
     }
   }, [])
+
   
   if (!searchResult || !recentItem) return null;
 
@@ -66,9 +69,9 @@ export const SearchResult = () => {
       <ItemSummaryInfo
         itemName={searchResult.itemName}
         isRecyclable={searchResult.isRecyclable}
-        councilName={councilName}
-        categoryName={categoryName}
-        imagePath={searchResult.itemImage}
+        councilName={searchResult.councilName || mockData.councilName}
+        categoryName={searchResult.categoryName || mockData.categoryName}
+        imagePath={searchResult.itemImage || mockData.imagePath}
       />
       <div className={styles.cardsWrapper}>
         {searchResult.howToRecycle &&<HowToRecycle howToRecycleInfo={searchResult.howToRecycle} />}

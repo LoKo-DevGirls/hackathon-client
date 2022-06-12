@@ -9,6 +9,7 @@ function App() {
   const [items, setItems] = useState([])
   const [councils, setCouncils] = useState([])
   const [keywords, setKeywords] = useState()
+  const [councilName, setCouncilName] = useState()
   const navigate = useNavigate()
 
  useEffect(() => {
@@ -41,16 +42,11 @@ function App() {
     console.log(councils)
  }, []) 
 
-//  const getCouncilSelectOptionList = councils.map(council => (
-//   {
-//     value: council.councilId,
-//     name: council.councilName
-//   }
-// ))
+  const getCouncilId = () => councilName === 'hackney' ? '2' : '1'
 
   const handleSearchButton = () => {
-    const councilId = '1'
-    navigate(`/search-result/${councilId}/${keywords}`)
+    
+    navigate(`/search-result/${getCouncilId()}/${keywords}`)
  }
  
   return (
@@ -59,7 +55,7 @@ function App() {
         <header className="App-header">
           <img className={styles.logo} src='/src/assets/Logos/Logo-03.png' alt='on the ground main logo'/>
         </header>
-        <Search data = {councils} type='council' />
+        <Search data = {councils} type='council' handleInputValue={setCouncilName}/>
         <Search data = {items} type='item' handleInputValue={setKeywords} />
         <div className={styles.buttonWrapper}>
           <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
