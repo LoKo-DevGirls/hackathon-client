@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+	font-family: "Underground";
+	src: local("Underground Book"), url("./assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
+	font-weight: 200;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+	font-family: "Underground";
+	src: url("./assets/Fonts/P22UndergroundPro-Book.otf") format("opentype");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Underground";
+	src: local("Underground Demi"), url("../Fonts/P22UndergroundPro-Demi.otf") format("opentype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Underground";
+	src: local("Underground Medium"), url("../Fonts/P22UndergroundPro-Medium.otf") format("opentype");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Underground";
+	src: local("Underground Heavy"), url("./assets/Fonts/P22UndergroundPro-Heavy.otf") format("opentype");
+	font-weight: 700;
 }
