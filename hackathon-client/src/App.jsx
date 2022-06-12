@@ -5,6 +5,7 @@ import { Search } from './components/Search/Search'
 import { dummyData } from './dummyData'
 import { Link } from 'react-router-dom'
 
+
 function App() {
   const [data, setData] = useState(dummyData)
 
