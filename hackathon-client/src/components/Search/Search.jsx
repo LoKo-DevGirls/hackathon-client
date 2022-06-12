@@ -3,7 +3,7 @@ import { SearchList } from "../SearchList/SearchList";
 import { MainSelect } from "../MainSelect/MainSelect";
 import styles from './Search.module.scss'
 
-export const Search = ({ data, type }) => {
+export const Search = ({ data, type, handleInputValue }) => {
 	const [inputValue, setInputValue] = useState("");
 	const [matchValue, setMatchValue] = useState([]);
 	const [showSuggestion, setShowSuggestion] = useState(true);
@@ -13,6 +13,7 @@ export const Search = ({ data, type }) => {
 		if (e.target.value.length > 0) {
 			findMatches(e.target.value);
 		}
+		handleInputValue(e.target.value)
 	};
 
 	const findMatches = (typedWord) => {
