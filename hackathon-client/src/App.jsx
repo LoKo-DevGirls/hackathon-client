@@ -3,12 +3,13 @@ import './App.scss'
 import fonts from './style/fonts.module.scss'
 import styles from './style/mainPage.module.scss'
 import { Search } from './components/Search/Search'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
 
 function App() {
   const [items, setItems] = useState([])
   const [councils, setCouncils] = useState([])
+  const [keywords, setKeywords] = useState()
+  const navigate = useNavigate()
 
  useEffect(() => {
     const loadItems = async () => {
@@ -46,6 +47,11 @@ function App() {
 //     name: council.councilName
 //   }
 // ))
+
+  const handleSearchButton = () => {
+    const councilId = '1'
+    navigate(`/search-result/${councilId}/${keywords}`)
+ }
  
   return (
     <div className={['App', styles.mainPage].join(' ')}>
@@ -54,8 +60,11 @@ function App() {
           <img className={styles.logo} src='/src/assets/Logos/Logo-03.png' alt='on the ground main logo'/>
         </header>
         <Search data = {councils} type='council' />
-        <Search data = {items} type='item'/>
-        <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
+        <Search data = {items} type='item' handleInputValue={setKeywords} />
+        <div className={styles.buttonWrapper}>
+          <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
+          <button className={styles.searchButton} onClick={() => handleSearchButton()}>Search</button>
+        </div>
       </section>
     </div>
   )
