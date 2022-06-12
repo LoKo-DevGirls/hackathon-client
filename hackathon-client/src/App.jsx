@@ -39,6 +39,13 @@ function App() {
     loadItems();
     loadCouncils();
  }, []) 
+
+ const getCouncilSelectOptionList = councils.map(council => (
+  {
+    value: council.councilId,
+    name: council.councilName
+  }
+))
  
   return (
     <div className={['App', styles.mainPage].join(' ')}>
@@ -48,7 +55,7 @@ function App() {
           ON THE GROUND
         </h1>
       </header>
-      <Search data = {items} />
+      <Search data = {items} councilList={getCouncilSelectOptionList} />
       <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
     </div>
   )

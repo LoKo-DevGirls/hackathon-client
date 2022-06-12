@@ -1,5 +1,5 @@
 import React from "react";
-//import styles from './SearchItem.module.css'
+import styles from './SearchList.module.scss'
 import {SearchItem} from "../SearchItem/SearchItem";
 
 export const SearchList = ({ matchArray, value }) => {
@@ -9,5 +9,5 @@ export const SearchList = ({ matchArray, value }) => {
 			return <SearchItem matchedItem={matchedItem.itemName} key={matchedItem.itemId} value={value} />;
 		});
 	}
-	return <ul className="searchList">{list}</ul>;
+	return <ul className={styles.searchList}>{list}</ul>;
 };
