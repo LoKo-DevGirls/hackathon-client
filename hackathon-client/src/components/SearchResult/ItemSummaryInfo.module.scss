@@ -9,6 +9,11 @@
     font-weight: bold;
   }
 
+  .itemImageWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
   .backButton {
     width: 4rem;
     height: 4rem;
@@ -22,6 +27,8 @@
 
   .itemImage {
     width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .recycleIcon {
@@ -71,7 +78,14 @@
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 3rem;
     align-items: center;
     margin-right: 0;
+
+    .itemImage {
+      max-width: 30vw;
+      margin-top: 2rem;
+    }
+    
   }
 }

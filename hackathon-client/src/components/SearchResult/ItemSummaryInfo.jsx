@@ -13,7 +13,7 @@ export const ItemSummaryInfo = (props) => {
 
   return (
     <section className={styles.itemSummaryInfo}>
-      <div>
+      <div className={styles.itemImageWrapper}>
         <Link to={'/'}>
           <button className={styles.backButton}><img src='/src/assets/Icons/arrow_back.svg' alt='back button'/></button>
         </Link>
