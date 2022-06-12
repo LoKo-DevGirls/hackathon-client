@@ -1,0 +1,13 @@
+.roundBoxWrapper {
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: var(--border-sm);
+  padding: var(--padding-m);
+  color: white;
+
+  header > h2 {
+    font-size: var(--title-sm);
+    margin-bottom: var(--padding-sm);
+    font-weight: bold;
+  }
+}
