@@ -29,8 +29,8 @@ export const SearchResult = () => {
     categoryId
   } = dummyItem
 
-  const councilName = councilId
-  const categoryName = categoryId
+  const councilName = 'Southwark'
+  const categoryName = 'Plastic'
   const moreItemList = ['can', 'box', 'bottle']
 
   return (

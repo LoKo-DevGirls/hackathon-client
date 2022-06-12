@@ -1,0 +1,65 @@
+.itemSummaryInfo {
+  width: 100%;
+  padding: 1.6rem 3.2rem 3.2rem;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .backButton {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--primary);
+	  border-radius: 4rem;
+
+    > img {
+      width: 2.4rem;
+    }
+  }
+
+  .itemImage {
+    width: 100%;
+  }
+
+  .recycleIcon {
+    width: 3rem;
+  }
+
+  .locationIcon{
+    width: 2.4rem;
+    margin-right: 1rem;
+  }
+
+  .locationWrapper,
+  .itemNameWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .locationWrapper {
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+    > p {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .itemNameWrapper {
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .categoryName {
+    height: 3rem;
+    border: 1px solid var(--primary);
+    border-radius: 3rem;
+    background-color: transparent;
+
+    > p {
+      margin: 0 1rem;
+    }
+  }
+}
