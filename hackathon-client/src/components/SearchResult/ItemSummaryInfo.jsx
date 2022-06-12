@@ -12,8 +12,10 @@ export const ItemSummaryInfo = (props) => {
 
   return (
     <section className={styles.itemSummaryInfo}>
-      <button className={styles.backButton}><img src='/src/assets/Icons/arrow_back.svg' alt='back button'/></button>
-      <img className={styles.itemImage} src={imagePath} alt={itemName} />
+      <div>
+        <button className={styles.backButton}><img src='/src/assets/Icons/arrow_back.svg' alt='back button'/></button>
+        <img className={styles.itemImage} src={imagePath} alt={itemName} />
+      </div>
       <header>
         <div className={styles.locationWrapper} >
           <img className={styles.locationIcon} src='/public/images/location.svg' alt='' />

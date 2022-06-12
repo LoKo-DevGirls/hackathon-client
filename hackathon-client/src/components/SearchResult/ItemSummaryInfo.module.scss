@@ -1,6 +1,8 @@
+@import "../../style/mixin";
+
 .itemSummaryInfo {
   width: 100%;
-  padding: 1.6rem 3.2rem 3.2rem;
+  padding: 1.6rem 0 3.2rem;
 
   h1 {
     font-size: 3rem;
@@ -61,5 +63,15 @@
     > p {
       margin: 0 1rem;
     }
+  }
+}
+
+@include desktop-and-tablet {
+  .itemSummaryInfo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    margin-right: 0;
   }
 }

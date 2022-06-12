@@ -1,0 +1,22 @@
+@import "../../style/mixin";
+
+.searchResultPage {
+  padding: 0 3.2rem 3.2rem;
+
+  .cardsWrapper {
+    display: flex;
+    flex-direction: column;
+
+    > div {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@include desktop-and-tablet {
+  .searchResultPage {
+    padding: 2rem 12rem 6rem;
+
+    // display: flex;
+  }
+}

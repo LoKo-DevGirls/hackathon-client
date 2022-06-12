@@ -1,7 +1,8 @@
 import React from 'react'
+import styles from './SearchResult.module.scss'
 import { HowToRecycle } from '../../components/SearchResult/HowToRecycleCard'
 import { ItemSummaryInfo } from '../../components/SearchResult/ItemSummaryInfo'
-import { MoreItemsSlider } from '../../components/SearchResult/MoreItemsSlider'
+import { MoreItemsCard } from '../../components/SearchResult/MoreItemsCard'
 import { UpcycleVideoCard } from '../../components/SearchResult/UpcycleVideoCard'
 
 const dummyItem = {
@@ -31,10 +32,10 @@ export const SearchResult = () => {
 
   const councilName = 'Southwark'
   const categoryName = 'Plastic'
-  const moreItemList = ['can', 'box', 'bottle']
+  const moreItemList = [{itemId:1}, {itemId:2}, {itemId:3}, {itemId:4}]
 
   return (
-    <div>
+    <div className={styles.searchResultPage}>
       <ItemSummaryInfo
         itemName={itemName}
         isRecyclable={isRecyclable}
@@ -42,9 +43,11 @@ export const SearchResult = () => {
         categoryName={categoryName}
         imagePath={itemImage}
       />
-      {howToRecycle &&<HowToRecycle howToRecycleInfo={howToRecycle} />}
-      {upcycleVideo && <UpcycleVideoCard videoLink={upcycleVideo} />}
-      <MoreItemsSlider itemList={moreItemList} />
+      <div className={styles.cardsWrapper}>
+        {howToRecycle &&<HowToRecycle howToRecycleInfo={howToRecycle} />}
+        {upcycleVideo && <UpcycleVideoCard videoLink={upcycleVideo} />}
+        <MoreItemsCard itemList={moreItemList} />
+      </div>
     </div>
   )
 }
