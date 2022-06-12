@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import './App.scss'
-import { Search } from './components/Search/Search'
 import font from './style/fonts.module.scss'
+import styles from './style/mainPage.module.scss'
+import { Search } from './components/Search/Search'
+import { dummyData } from './dummyData'
+import { Link } from 'react-router-dom'
 
 
 function App() {
@@ -36,10 +39,24 @@ function App() {
     loadItems();
     loadCouncils();
  }, []) 
+
+ const getCouncilSelectOptionList = councils.map(council => (
+  {
+    value: council.councilId,
+    name: council.councilName
+  }
+))
  
   return (
-    <div className="App">
-      <Search data = {items}/>
+    <div className={['App', styles.mainPage].join(' ')}>
+      <header className="App-header">
+        <img src='/src/assets/Logos/Logo-02.png' alt='on the ground main logo'/>
+        <h1 className={font.title}>
+          ON THE GROUND
+        </h1>
+      </header>
+      <Search data = {items} councilList={getCouncilSelectOptionList} />
+      <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
     </div>
   )
 }

@@ -1,0 +1,25 @@
+.search {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  
+  input {
+    height: 4rem;
+  }
+  
+  .searchInput {
+    border-bottom: 2px solid #24AE89;
+    
+  }
+
+  .submitInput {
+    background-color: #24AE89;
+    color: white;
+    margin-left: 1rem;
+    padding: 0 1.2rem;
+  }
+
+  .searchInputWrapper {
+    margin-top: 1rem;
+  }
+}
