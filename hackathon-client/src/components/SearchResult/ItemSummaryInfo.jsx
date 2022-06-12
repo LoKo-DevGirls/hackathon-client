@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './ItemSummaryInfo.module.scss'
 
 export const ItemSummaryInfo = (props) => {
   const {
@@ -10,23 +11,26 @@ export const ItemSummaryInfo = (props) => {
   } = props
 
   return (
-    <section>
-      <img alt='' src={imagePath} />
+    <section className={styles.itemSummaryInfo}>
+      <div>
+        <button className={styles.backButton}><img src='/src/assets/Icons/arrow_back.svg' alt='back button'/></button>
+        <img className={styles.itemImage} src={imagePath} alt={itemName} />
+      </div>
       <header>
-        <div>
-          <img src='/public/images/location.svg' alt='' />
+        <div className={styles.locationWrapper} >
+          <img className={styles.locationIcon} src='/public/images/location.svg' alt='' />
           <p>{councilName}</p>
         </div>
-        <div>
+        <div className={styles.itemNameWrapper}>
           <h1>{itemName}</h1>
           {isRecyclable
-            ? <img src='/public/images/recyclable-icon.svg' alt='recyclable symbol' />
+            ? <img className={styles.recycleIcon} src='/public/images/recyclable-icon.svg' alt='recyclable symbol' />
             : <></>
           }
         </div>
-        {categoryName&& <div>
+        {categoryName&& <button className={styles.categoryName}>
           <p>{categoryName}</p>
-        </div>}
+        </button>}
       </header>
     </section>
   )
