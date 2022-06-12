@@ -3,7 +3,7 @@ import { SearchList } from "../SearchList/SearchList";
 import { MainSelect } from "../MainSelect/MainSelect";
 import styles from './Search.module.scss'
 
-export const Search = ({ data, councilList }) => {
+export const Search = ({ data, type }) => {
 	const [inputValue, setInputValue] = useState("");
 	const [matchValue, setMatchValue] = useState([]);
 
@@ -16,14 +16,13 @@ export const Search = ({ data, councilList }) => {
 
 	const findMatches = (typedWord) => {
 		const regex = new RegExp(typedWord, "gi");
-		// console.log(data.filter((item) => item.itemName.match(regex)))
-		let matchArray = data.filter((item) => item.itemName.match(regex));
+		let matchArray = type === 'item'? data.filter((item) => item.itemName.match(regex)) : data.filter((item) => item.councilName.match(regex));
+		console.log(matchArray);
 		setMatchValue(matchArray);
 	};
 
 	return (
 		<div className={styles.search}>
-			<MainSelect optionList={councilList} placeHolder={'Select Your Council'}/>
 			<div className={styles.searchInputWrapper}>
 				<input
 					className={styles.searchInput}
@@ -33,8 +32,7 @@ export const Search = ({ data, councilList }) => {
 					onChange={inputChange}
 					autoComplete="off"
 				/>
-				<input className={styles.submitInput} type="submit" name="submit" value="search" />
-				{inputValue && <SearchList matchArray={matchValue} value={inputValue} />}
+				{inputValue && <SearchList matchArray={matchValue} value={inputValue} type={type}/>}
 			</div>
 		</div>
 	);

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './MainSelect.module.scss'
+import Select from 'react-select'
 
 export const MainSelect = (props) => {
   const {

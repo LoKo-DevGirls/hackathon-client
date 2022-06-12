@@ -2,8 +2,9 @@
 
 :root {
 	--primary: #67ae8b;
-	--secondary: #498075;
+	--secondary: #008e7d;
 	--dark-green: #06373a;
+	--darkest-green: #162027;
 	--light-yellow: #ffe3b3;
 
 	// Border Radius
@@ -22,9 +23,10 @@
 }
 
 body {
-	font-family: "Underground";
-	font-weight: 600;
+	font-family: "Underground Book";
+	font-weight: 300;
 	font-size: 1rem;
+	background-color: var(--secondary);
 }
 
 button {
