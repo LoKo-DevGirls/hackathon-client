@@ -1,31 +1,45 @@
 import { useState, useEffect } from 'react'
 import './App.scss'
-import font from './style/fonts.module.scss'
 import { Search } from './components/Search/Search'
-import { dummyData } from './dummyData'
+import font from './style/fonts.module.scss'
 
 
 function App() {
-  const [data, setData] = useState(dummyData)
+  const [items, setItems] = useState([])
+  const [councils, setCouncils] = useState([])
 
- // useEffect(() => {
-    //const loadData = () => {
-        // try {
-        //     const response = await fetch("url", {
-        //         headers: { "Content-Type": "application/json" },
-        //         method: "GET"
-        //     });
-        //     console.log(response.data)
-        //     setData(response.data)
-        // } catch (err) {
-        //     console.error(err);
-    //}
-    //loadData();
- // }, []) //TODO: Not yet implemented.
-
+ useEffect(() => {
+    const loadItems = async () => {
+        try {
+            const response = await fetch("https://on-the-ground-api.herokuapp.com/allitem", {
+                headers: { "Content-Type": "application/json" },
+                method: "GET"
+            });
+            const data = await response.json()
+            console.log(data);
+            setItems(data);
+        } catch (err) {
+            console.error(err);
+    }}
+    const loadCouncils = async () => {
+      try {
+          const response = await fetch("https://on-the-ground-api.herokuapp.com/councils", {
+              headers: { "Content-Type": "application/json" },
+              method: "GET"
+          });
+          const data = await response.json()
+          console.log(data);
+          setCouncils(data);
+      } catch (err) {
+          console.error(err);
+  }}
+    loadItems();
+    loadCouncils();
+ }, []) 
+ 
   return (
     <div className="App">
-      lorem ipsum
+      <Search data = {items}/>
     </div>
   )
 }
