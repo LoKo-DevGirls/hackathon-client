@@ -6,6 +6,7 @@ import styles from './Search.module.scss'
 export const Search = ({ data, type, handleInputValue }) => {
 	const [inputValue, setInputValue] = useState("");
 	const [matchValue, setMatchValue] = useState([]);
+	const [showSuggestion, setShowSuggestion] = useState(true);
 
 	const inputChange = (e) => {
 		setInputValue(e.target.value);
@@ -18,7 +19,6 @@ export const Search = ({ data, type, handleInputValue }) => {
 	const findMatches = (typedWord) => {
 		const regex = new RegExp(typedWord, "gi");
 		let matchArray = type === 'item'? data.filter((item) => item.itemName.match(regex)) : data.filter((item) => item.councilName.match(regex));
-		console.log(matchArray);
 		setMatchValue(matchArray);
 	};
 
@@ -33,7 +33,7 @@ export const Search = ({ data, type, handleInputValue }) => {
 					onChange={inputChange}
 					autoComplete="off"
 				/>
-				{inputValue && <SearchList matchArray={matchValue} value={inputValue} type={type}/>}
+				{inputValue && showSuggestion && <SearchList matchArray={matchValue} value={inputValue} setInputValue={setInputValue} setShowSuggestion={setShowSuggestion} type={type}/>}
 			</div>
 		</div>
 	);

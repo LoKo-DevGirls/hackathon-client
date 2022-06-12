@@ -20,7 +20,6 @@ function App() {
 					method: "GET"
 				});
 				const data = await response.json();
-				console.log(data);
 				setItems(data);
 			} catch (err) {
 				console.error(err);
@@ -33,7 +32,6 @@ function App() {
 					method: "GET"
 				});
 				const data = await response.json();
-				console.log(data);
 				setCouncils(data);
 			} catch (err) {
 				console.error(err);
@@ -41,7 +39,6 @@ function App() {
 		};
 		loadItems();
 		loadCouncils();
-		console.log(councils);
 	}, []);
 
 	const getCouncilId = () => (councilName === "hackney" ? "2" : "1");
