@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './ItemSummaryInfo.module.scss'
+import { Link } from 'react-router-dom'
 
 export const ItemSummaryInfo = (props) => {
   const {
@@ -13,7 +14,9 @@ export const ItemSummaryInfo = (props) => {
   return (
     <section className={styles.itemSummaryInfo}>
       <div>
-        <button className={styles.backButton}><img src='/src/assets/Icons/arrow_back.svg' alt='back button'/></button>
+        <Link to={'/'}>
+          <button className={styles.backButton}><img src='/src/assets/Icons/arrow_back.svg' alt='back button'/></button>
+        </Link>
         <img className={styles.itemImage} src={imagePath} alt={itemName} />
       </div>
       <header>
