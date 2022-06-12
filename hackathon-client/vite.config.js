@@ -10,23 +10,23 @@ export default defineConfig({
 				families: [
 					{
 						name: "Underground Light",
-						src: "./assets/Fonts/P22UndergroundPro-Light.otf"
+						src: "./src/assets/Fonts/P22UndergroundPro-Light.otf"
 					},
 					{
 						name: "Underground Book",
-						src: "./assets/Fonts/P22UndergroundPro-Book.otf"
+						src: "./src/assets/Fonts/P22UndergroundPro-Book.otf"
 					},
 					{
 						name: "Underground Demi",
-						src: "./assets/Fonts/P22UndergroundPro-Demi.otf"
+						src: "./src/assets/Fonts/P22UndergroundPro-Demi.otf"
 					},
 					{
 						name: "Underground Medium",
-						src: "./assets/Fonts/P22UndergroundPro-Medium.otf"
+						src: "./src/assets/Fonts/P22UndergroundPro-Medium.otf"
 					},
 					{
 						name: "Underground Heavy",
-						src: "./assets/Fonts/P22UndergroundPro-Heavy.otf"
+						src: "./src/assets/Fonts/P22UndergroundPro-Heavy.otf"
 					}
 				],
 				display: "auto",
