@@ -3,6 +3,7 @@ import './App.scss'
 import font from './style/fonts.module.scss'
 import { Search } from './components/Search/Search'
 import { dummyData } from './dummyData'
+import { Link } from 'react-router-dom'
 
 function App() {
   const [data, setData] = useState(dummyData)
@@ -25,12 +26,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src='/src/assets/Logos/Logo-01.png' alt='on the ground main logo'/>
         <h1 className={font.title}>
-          Blah
+          On The Ground
         </h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo neque inventore ipsam doloremque pariatur, porro quisquam sint distinctio deleniti itaque provident praesentium repellat molestias dolore nulla optio nisi iure ratione?
       </header>
       <Search data = {data} />
+      <Link to="/search-result/1">Add New Item</Link>
     </div>
   )
 }
