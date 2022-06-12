@@ -19,7 +19,6 @@ function App() {
                 method: "GET"
             });
             const data = await response.json()
-            console.log(data);
             setItems(data);
         } catch (err) {
             console.error(err);
@@ -31,22 +30,14 @@ function App() {
               method: "GET"
           });
           const data = await response.json()
-          console.log(data);
           setCouncils(data);
       } catch (err) {
           console.error(err);
   }}
     loadItems();
     loadCouncils();
-    console.log(councils)
  }, []) 
 
-//  const getCouncilSelectOptionList = councils.map(council => (
-//   {
-//     value: council.councilId,
-//     name: council.councilName
-//   }
-// ))
 
   const handleSearchButton = () => {
     const councilId = '1'

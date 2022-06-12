@@ -1,15 +1,16 @@
 import React from "react";
 import styles from './SearchItem.module.scss'
 
-export const SearchItem = ({ matchedItem, value }) => {
+export const SearchItem = ({ matchedItem, value, setShowSuggestion, setInputValue }) => {
 	let index = matchedItem.toLowerCase().indexOf(value.toLowerCase());
 
 	return (
 		<li
 			className={styles.SearchItem}
-			// onClick={() => {
-			// 	addItem(data);
-			// }}
+			onClick={(e) => {
+				setInputValue(matchedItem.toLowerCase())
+				setShowSuggestion(false)
+			}}
 		>
 			<span>
 				{matchedItem.slice(0, index)}

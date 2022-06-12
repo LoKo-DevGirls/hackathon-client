@@ -36,7 +36,6 @@ export const AddItem = () => {
                 method: "POST"
             });
             const finalData = await response.json()
-            console.log(finalData)
             alert('Thanks for the submission. Your data is now waiting for the approval')
             setRedirect(true);
         } catch (err) {
