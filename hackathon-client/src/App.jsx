@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.scss'
-import font from './style/fonts.module.scss'
+import fonts from './style/fonts.module.scss'
 import styles from './style/mainPage.module.scss'
 import { Search } from './components/Search/Search'
-import { dummyData } from './dummyData'
 import { Link } from 'react-router-dom'
 
 
@@ -38,25 +37,26 @@ function App() {
   }}
     loadItems();
     loadCouncils();
+    console.log(councils)
  }, []) 
 
- const getCouncilSelectOptionList = councils.map(council => (
-  {
-    value: council.councilId,
-    name: council.councilName
-  }
-))
+//  const getCouncilSelectOptionList = councils.map(council => (
+//   {
+//     value: council.councilId,
+//     name: council.councilName
+//   }
+// ))
  
   return (
     <div className={['App', styles.mainPage].join(' ')}>
-      <header className="App-header">
-        <img src='/src/assets/Logos/Logo-02.png' alt='on the ground main logo'/>
-        <h1 className={font.title}>
-          ON THE GROUND
-        </h1>
-      </header>
-      <Search data = {items} councilList={getCouncilSelectOptionList} />
-      <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
+      <section className={styles.wrapper}>
+        <header className="App-header">
+          <img className={styles.logo} src='/src/assets/Logos/Logo-03.png' alt='on the ground main logo'/>
+        </header>
+        <Search data = {councils} type='council' />
+        <Search data = {items} type='item'/>
+        <Link to="/add-item"><button className={styles.addItemButton}><img src='/src/assets/Icons/plus.svg'/><span>Add New Item</span></button></Link>
+      </section>
     </div>
   )
 }

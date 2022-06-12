@@ -1,3 +1,9 @@
 .searchList {
-  color: black;
+	width: 90%;
+	color: var(--dark-green);
+	position: absolute;
+	top: 3.2rem;
+	background-color: white;
+	border:1px solid var(--dark-green);
+	z-index: 10;
 }

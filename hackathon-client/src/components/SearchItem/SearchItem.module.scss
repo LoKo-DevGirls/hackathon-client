@@ -1,0 +1,17 @@
+.SearchItem {
+	padding: 0.5rem;
+	color:var(--dark-green);
+
+	.highlight {
+		color:var(--primary);
+	}
+
+	&:hover {
+		background-color: var(--dark-green);
+		color:var(--light-yellow);
+
+		.highlight {
+			color:var(--primary);
+		}
+	}
+}
