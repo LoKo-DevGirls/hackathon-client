@@ -4,6 +4,7 @@ import font from './style/fonts.module.scss'
 import { Search } from './components/Search/Search'
 import { dummyData } from './dummyData'
 
+
 function App() {
   const [data, setData] = useState(dummyData)
 
@@ -24,13 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className={font.title}>
-          Blah
-        </h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo neque inventore ipsam doloremque pariatur, porro quisquam sint distinctio deleniti itaque provident praesentium repellat molestias dolore nulla optio nisi iure ratione?
-      </header>
-      <Search data = {data} />
+      lorem ipsum
     </div>
   )
 }
