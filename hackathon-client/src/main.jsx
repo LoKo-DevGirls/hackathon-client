@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   element ={ <AddItem /> }
               />
               <Route  
-                  path='/search-result/:itemId'
+                  path='/search-result/:councilId/:itemName'
                   element ={ <SearchResult /> }
               />
             </Routes>
